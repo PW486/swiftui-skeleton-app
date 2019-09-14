@@ -56,9 +56,9 @@
 		8A30468F232CECA8003D6A07 /* SwiftUI Skeleton App */ = {
 			isa = PBXGroup;
 			children = (
+				8A304694232CECA8003D6A07 /* ContentView.swift */,
 				8A304690232CECA8003D6A07 /* AppDelegate.swift */,
 				8A304692232CECA8003D6A07 /* SceneDelegate.swift */,
-				8A304694232CECA8003D6A07 /* ContentView.swift */,
 				8A304696232CECAC003D6A07 /* Assets.xcassets */,
 				8A30469B232CECAC003D6A07 /* LaunchScreen.storyboard */,
 				8A30469E232CECAC003D6A07 /* Info.plist */,
@@ -284,16 +284,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI Skeleton App/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI Skeleton App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.SwiftUI-Skeleton-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.swiftui-skeleton-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,16 +306,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI Skeleton App/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI Skeleton App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.SwiftUI-Skeleton-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.swiftui-skeleton-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
