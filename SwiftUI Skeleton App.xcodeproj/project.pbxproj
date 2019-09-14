@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		8A304691232CECA8003D6A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A304690232CECA8003D6A07 /* AppDelegate.swift */; };
 		8A304693232CECA8003D6A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A304692232CECA8003D6A07 /* SceneDelegate.swift */; };
-		8A304695232CECA8003D6A07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A304694232CECA8003D6A07 /* ContentView.swift */; };
+		8A304695232CECA8003D6A07 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A304694232CECA8003D6A07 /* LogInView.swift */; };
 		8A304697232CECAC003D6A07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A304696232CECAC003D6A07 /* Assets.xcassets */; };
 		8A30469A232CECAC003D6A07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A304699232CECAC003D6A07 /* Preview Assets.xcassets */; };
 		8A30469D232CECAC003D6A07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A30469B232CECAC003D6A07 /* LaunchScreen.storyboard */; };
+		8A8C831B232D0813007F6410 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A8C831A232D0813007F6410 /* .swiftlint.yml */; };
+		8A8C831E232D0A2C007F6410 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8A8C831C232D0A2C007F6410 /* LICENSE */; };
+		8A8C831F232D0A2C007F6410 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8A8C831D232D0A2C007F6410 /* README.md */; };
+		8A8C8324232D0DAB007F6410 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8323232D0DAB007F6410 /* RegisterView.swift */; };
+		8A8C8326232D0DB8007F6410 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8325232D0DB8007F6410 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8A30468D232CECA8003D6A07 /* SwiftUI Skeleton App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Skeleton App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A30468D232CECA8003D6A07 /* Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A304690232CECA8003D6A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A304692232CECA8003D6A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8A304694232CECA8003D6A07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8A304694232CECA8003D6A07 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8A304696232CECAC003D6A07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A304699232CECAC003D6A07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A30469C232CECAC003D6A07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A30469E232CECAC003D6A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8C831A232D0813007F6410 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8A8C831C232D0A2C007F6410 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8A8C831D232D0A2C007F6410 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8A8C8323232D0DAB007F6410 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8A8C8325232D0DB8007F6410 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,13 +52,16 @@
 			children = (
 				8A30468F232CECA8003D6A07 /* SwiftUI Skeleton App */,
 				8A30468E232CECA8003D6A07 /* Products */,
+				8A8C831A232D0813007F6410 /* .swiftlint.yml */,
+				8A8C831C232D0A2C007F6410 /* LICENSE */,
+				8A8C831D232D0A2C007F6410 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
 		8A30468E232CECA8003D6A07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A30468D232CECA8003D6A07 /* SwiftUI Skeleton App.app */,
+				8A30468D232CECA8003D6A07 /* Skeleton.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,7 +69,9 @@
 		8A30468F232CECA8003D6A07 /* SwiftUI Skeleton App */ = {
 			isa = PBXGroup;
 			children = (
-				8A304694232CECA8003D6A07 /* ContentView.swift */,
+				8A8C8320232D0AC4007F6410 /* Home */,
+				8A8C8321232D0BCE007F6410 /* LogIn */,
+				8A8C8322232D0BDD007F6410 /* Register */,
 				8A304690232CECA8003D6A07 /* AppDelegate.swift */,
 				8A304692232CECA8003D6A07 /* SceneDelegate.swift */,
 				8A304696232CECAC003D6A07 /* Assets.xcassets */,
@@ -75,6 +90,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8A8C8320232D0AC4007F6410 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C8325232D0DB8007F6410 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8A8C8321232D0BCE007F6410 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				8A304694232CECA8003D6A07 /* LogInView.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		8A8C8322232D0BDD007F6410 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C8323232D0DAB007F6410 /* RegisterView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +124,7 @@
 				8A304689232CECA8003D6A07 /* Sources */,
 				8A30468A232CECA8003D6A07 /* Frameworks */,
 				8A30468B232CECA8003D6A07 /* Resources */,
+				8A8C8319232D04DD007F6410 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -92,7 +132,7 @@
 			);
 			name = "SwiftUI Skeleton App";
 			productName = "SwiftUI Skeleton App";
-			productReference = 8A30468D232CECA8003D6A07 /* SwiftUI Skeleton App.app */;
+			productReference = 8A30468D232CECA8003D6A07 /* Skeleton.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,13 +173,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8C831F232D0A2C007F6410 /* README.md in Resources */,
+				8A8C831B232D0813007F6410 /* .swiftlint.yml in Resources */,
 				8A30469D232CECAC003D6A07 /* LaunchScreen.storyboard in Resources */,
 				8A30469A232CECAC003D6A07 /* Preview Assets.xcassets in Resources */,
 				8A304697232CECAC003D6A07 /* Assets.xcassets in Resources */,
+				8A8C831E232D0A2C007F6410 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A8C8319232D04DD007F6410 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A304689232CECA8003D6A07 /* Sources */ = {
@@ -147,8 +210,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A304691232CECA8003D6A07 /* AppDelegate.swift in Sources */,
+				8A8C8324232D0DAB007F6410 /* RegisterView.swift in Sources */,
 				8A304693232CECA8003D6A07 /* SceneDelegate.swift in Sources */,
-				8A304695232CECA8003D6A07 /* ContentView.swift in Sources */,
+				8A8C8326232D0DB8007F6410 /* HomeView.swift in Sources */,
+				8A304695232CECA8003D6A07 /* LogInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +360,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.swiftui-skeleton-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Skeleton;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +382,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.swiftui-skeleton-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Skeleton;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

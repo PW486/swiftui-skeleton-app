@@ -15,6 +15,8 @@
 
 > SwiftUI Skeleton App
 
+## WIP
+
 ## License
 
 Copyright © 2019 [DONGGEON LIM](https://github.com/PW486).<br />
