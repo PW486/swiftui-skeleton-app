@@ -6,11 +6,33 @@
 //  Copyright © 2019 PW486. All rights reserved.
 //
 
+import Alamofire
 import SwiftUI
+import SwiftyJSON
+
+struct Login: Codable {
+  let email: String
+  let password: String
+}
+
+// MARK: - test
 
 struct LogInView: View {
   @State var email: String = ""
   @State var password: String = ""
+
+  func req() {
+    let parameters: Parameters = [
+      "email": "test@test.com",
+      "password": "test",
+    ]
+    Alamofire.request("https://httpbin.org/post",
+                      method: .post,
+                      parameters: parameters,
+                      encoding: URLEncoding.default).responseJSON { response in
+      debugPrint(response)
+    }
+  }
 
   var body: some View {
     VStack {
@@ -22,6 +44,9 @@ struct LogInView: View {
       }
     }
     .padding()
+    .onAppear {
+      self.req()
+    }
   }
 }
 

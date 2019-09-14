@@ -1,0 +1,12 @@
+# file options
+
+--symlinks ignore
+--swiftversion 5
+
+# rules
+
+--disable andOperator
+
+# format options
+
+--indent 2
