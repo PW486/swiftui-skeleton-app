@@ -10,12 +10,11 @@ import Alamofire
 import SwiftUI
 import SwiftyJSON
 
-struct Login: Codable {
-  let email: String
-  let password: String
+struct Account: Codable {
+  var email: String
+  var name: String
+  var accessToken: String
 }
-
-// MARK: - test
 
 struct LogInView: View {
   @State var email: String = ""
@@ -26,10 +25,7 @@ struct LogInView: View {
       "email": "test@test.com",
       "password": "test",
     ]
-    Alamofire.request("https://httpbin.org/post",
-                      method: .post,
-                      parameters: parameters,
-                      encoding: URLEncoding.default).responseJSON { response in
+    Alamofire.request("https://localhost:3000/api/v1/signin", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
       debugPrint(response)
     }
   }
