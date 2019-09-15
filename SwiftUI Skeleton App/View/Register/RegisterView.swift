@@ -11,6 +11,7 @@ import SwiftUI
 import SwiftyJSON
 
 struct RegisterView: View {
+  @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
   @State var email: String = ""
   @State var name: String = ""
   @State var password: String = ""
@@ -32,9 +33,14 @@ struct RegisterView: View {
         .textFieldStyle(RoundedBorderTextFieldStyle())
       SecureField("Password", text: $password)
         .textFieldStyle(RoundedBorderTextFieldStyle())
-      Button("Log In") {
-        AccountAPI.shared.signup(self.registerFormData) { res in
-          print(res)
+      HStack {
+        Button("Cancel") {
+          self.presentation.wrappedValue.dismiss()
+        }
+        Button("Sign Up") {
+          AccountAPI.shared.signup(self.registerFormData) { res in
+            print(res)
+          }
         }
       }
     }

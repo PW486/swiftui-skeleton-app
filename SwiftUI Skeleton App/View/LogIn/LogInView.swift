@@ -11,6 +11,8 @@ import SwiftUI
 import SwiftyJSON
 
 struct LogInView: View {
+  @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
+  @State private var showModal = false
   @State var email: String = ""
   @State var password: String = ""
 
@@ -28,16 +30,27 @@ struct LogInView: View {
         .textFieldStyle(RoundedBorderTextFieldStyle())
       SecureField("Password", text: $password)
         .textFieldStyle(RoundedBorderTextFieldStyle())
-      Button("Log In") {
-        AccountAPI.shared.signin(self.logInFormData) { res in
-          print(res)
+
+      HStack {
+        Button("Cancel") {
+          self.presentation.wrappedValue.dismiss()
+        }
+        Button("Log In") {
+          AccountAPI.shared.signin(self.logInFormData) { res in
+            print(res)
+          }
+        }
+        Button("Register") {
+          self.showModal = true
         }
       }
     }
     .padding()
     .onAppear {
       print("On Appear")
-    }
+    }.sheet(isPresented: $showModal, content: {
+      RegisterView()
+    })
   }
 }
 

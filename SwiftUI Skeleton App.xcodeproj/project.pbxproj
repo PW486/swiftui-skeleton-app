@@ -24,8 +24,8 @@
 		8A8C833C232DFC6C007F6410 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C833B232DFC6C007F6410 /* AccountModel.swift */; };
 		8A8C833E232DFC7B007F6410 /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C833D232DFC7B007F6410 /* AccountAPI.swift */; };
 		8A8C8340232E0365007F6410 /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C833F232E0365007F6410 /* RequestAPI.swift */; };
-		8A8C8342232E10AE007F6410 /* BoardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8341232E10AE007F6410 /* BoardAPI.swift */; };
-		8A8C8344232E10B9007F6410 /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8343232E10B9007F6410 /* BoardModel.swift */; };
+		8A8C8342232E10AE007F6410 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8341232E10AE007F6410 /* PostAPI.swift */; };
+		8A8C8344232E10B9007F6410 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8343232E10B9007F6410 /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +46,8 @@
 		8A8C833B232DFC6C007F6410 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		8A8C833D232DFC7B007F6410 /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
 		8A8C833F232E0365007F6410 /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
-		8A8C8341232E10AE007F6410 /* BoardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAPI.swift; sourceTree = "<group>"; };
-		8A8C8343232E10B9007F6410 /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
+		8A8C8341232E10AE007F6410 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
+		8A8C8343232E10B9007F6410 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				8A8C8338232DFBFE007F6410 /* Account */,
-				8A8C8339232DFC05007F6410 /* Board */,
+				8A8C8339232DFC05007F6410 /* Post */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,13 +167,13 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
-		8A8C8339232DFC05007F6410 /* Board */ = {
+		8A8C8339232DFC05007F6410 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				8A8C8341232E10AE007F6410 /* BoardAPI.swift */,
-				8A8C8343232E10B9007F6410 /* BoardModel.swift */,
+				8A8C8343232E10B9007F6410 /* PostModel.swift */,
+				8A8C8341232E10AE007F6410 /* PostAPI.swift */,
 			);
-			path = Board;
+			path = Post;
 			sourceTree = "<group>";
 		};
 		8A8C833A232DFC14007F6410 /* Common */ = {
@@ -292,11 +292,11 @@
 				8A8C833C232DFC6C007F6410 /* AccountModel.swift in Sources */,
 				8A8C8324232D0DAB007F6410 /* RegisterView.swift in Sources */,
 				8A304693232CECA8003D6A07 /* SceneDelegate.swift in Sources */,
-				8A8C8342232E10AE007F6410 /* BoardAPI.swift in Sources */,
+				8A8C8342232E10AE007F6410 /* PostAPI.swift in Sources */,
 				8A8C8326232D0DB8007F6410 /* HomeView.swift in Sources */,
 				8A8C833E232DFC7B007F6410 /* AccountAPI.swift in Sources */,
 				8A8C8340232E0365007F6410 /* RequestAPI.swift in Sources */,
-				8A8C8344232E10B9007F6410 /* BoardModel.swift in Sources */,
+				8A8C8344232E10B9007F6410 /* PostModel.swift in Sources */,
 				8A304695232CECA8003D6A07 /* LogInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

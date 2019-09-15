@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct HomeView: View {
+  @State private var showModal = false
+
   var body: some View {
     NavigationView {
       List {
@@ -16,8 +18,24 @@ struct HomeView: View {
         Text("Hello World")
         Text("Hello World")
       }
-      .navigationBarTitle(Text("Navigation Title"))
-    }
+      .navigationBarItems(trailing:
+        Button(action: {
+          self.showModal = true
+        }, label: {
+          Image(systemName: "person.circle")
+      }))
+      .navigationBarTitle(Text("Skeleton"), displayMode: .inline)
+      .onAppear {
+        if UserDefaults.standard.string(forKey: "access_token") == nil {
+          self.showModal = true
+        }
+//        PostAPI.shared.findAll(nil) {_ in
+//
+//        }
+      }
+    }.sheet(isPresented: $showModal, content: {
+      LogInView()
+    })
   }
 }
 
