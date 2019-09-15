@@ -21,6 +21,11 @@
 		8A8C832C232D16BB007F6410 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8C832B232D16BB007F6410 /* SwiftyJSON */; };
 		8A8C832E232D2D5E007F6410 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 8A8C832D232D2D5E007F6410 /* .swiftformat */; };
 		8A8C8331232D306C007F6410 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8C8330232D306C007F6410 /* Alamofire */; };
+		8A8C833C232DFC6C007F6410 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C833B232DFC6C007F6410 /* AccountModel.swift */; };
+		8A8C833E232DFC7B007F6410 /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C833D232DFC7B007F6410 /* AccountAPI.swift */; };
+		8A8C8340232E0365007F6410 /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C833F232E0365007F6410 /* RequestAPI.swift */; };
+		8A8C8342232E10AE007F6410 /* BoardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8341232E10AE007F6410 /* BoardAPI.swift */; };
+		8A8C8344232E10B9007F6410 /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8343232E10B9007F6410 /* BoardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		8A8C8323232D0DAB007F6410 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8A8C8325232D0DB8007F6410 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8A8C832D232D2D5E007F6410 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
+		8A8C833B232DFC6C007F6410 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		8A8C833D232DFC7B007F6410 /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
+		8A8C833F232E0365007F6410 /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
+		8A8C8341232E10AE007F6410 /* BoardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAPI.swift; sourceTree = "<group>"; };
+		8A8C8343232E10B9007F6410 /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +87,9 @@
 		8A30468F232CECA8003D6A07 /* SwiftUI Skeleton App */ = {
 			isa = PBXGroup;
 			children = (
-				8A8C8320232D0AC4007F6410 /* Home */,
-				8A8C8321232D0BCE007F6410 /* LogIn */,
-				8A8C8322232D0BDD007F6410 /* Register */,
+				8A8C8336232DFBDF007F6410 /* View */,
+				8A8C8337232DFBEA007F6410 /* Model */,
+				8A8C833A232DFC14007F6410 /* Common */,
 				8A304690232CECA8003D6A07 /* AppDelegate.swift */,
 				8A304692232CECA8003D6A07 /* SceneDelegate.swift */,
 				8A304696232CECAC003D6A07 /* Assets.xcassets */,
@@ -127,6 +137,51 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A8C8336232DFBDF007F6410 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C8320232D0AC4007F6410 /* Home */,
+				8A8C8321232D0BCE007F6410 /* LogIn */,
+				8A8C8322232D0BDD007F6410 /* Register */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A8C8337232DFBEA007F6410 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C8338232DFBFE007F6410 /* Account */,
+				8A8C8339232DFC05007F6410 /* Board */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A8C8338232DFBFE007F6410 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C833B232DFC6C007F6410 /* AccountModel.swift */,
+				8A8C833D232DFC7B007F6410 /* AccountAPI.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		8A8C8339232DFC05007F6410 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C8341232E10AE007F6410 /* BoardAPI.swift */,
+				8A8C8343232E10B9007F6410 /* BoardModel.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		8A8C833A232DFC14007F6410 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C833F232E0365007F6410 /* RequestAPI.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nif which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -234,9 +289,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A304691232CECA8003D6A07 /* AppDelegate.swift in Sources */,
+				8A8C833C232DFC6C007F6410 /* AccountModel.swift in Sources */,
 				8A8C8324232D0DAB007F6410 /* RegisterView.swift in Sources */,
 				8A304693232CECA8003D6A07 /* SceneDelegate.swift in Sources */,
+				8A8C8342232E10AE007F6410 /* BoardAPI.swift in Sources */,
 				8A8C8326232D0DB8007F6410 /* HomeView.swift in Sources */,
+				8A8C833E232DFC7B007F6410 /* AccountAPI.swift in Sources */,
+				8A8C8340232E0365007F6410 /* RequestAPI.swift in Sources */,
+				8A8C8344232E10B9007F6410 /* BoardModel.swift in Sources */,
 				8A304695232CECA8003D6A07 /* LogInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,28 +10,6 @@ import Alamofire
 import SwiftUI
 import SwiftyJSON
 
-struct Account: Codable {
-  var email: String
-  var name: String
-  var accessToken: String
-}
-
-struct AccountAPI {
-  static let shared = AccountAPI()
-
-  func singin(_ parameters: Parameters) {
-    Alamofire.request("http://localhost:3000/api/v1/signin", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { res in
-      switch res.result {
-      case .success:
-        let json = JSON(res.result.value)
-        print(json)
-      case let .failure(err):
-        print(err.localizedDescription)
-      }
-    }
-  }
-}
-
 struct LogInView: View {
   @State var email: String = ""
   @State var password: String = ""
@@ -51,7 +29,9 @@ struct LogInView: View {
       SecureField("Password", text: $password)
         .textFieldStyle(RoundedBorderTextFieldStyle())
       Button("Log In") {
-        AccountAPI.shared.singin(self.logInFormData)
+        AccountAPI.shared.signin(self.logInFormData) { res in
+          print(res)
+        }
       }
     }
     .padding()
