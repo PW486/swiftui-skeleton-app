@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct Post: Codable, Hashable {
+  var id: Int
+  var title: String
+  var text: String
+  var photo: String?
+  var createdAt: String
+  var updatedAt: String
+}

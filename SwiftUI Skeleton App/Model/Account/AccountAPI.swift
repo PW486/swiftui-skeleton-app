@@ -13,7 +13,7 @@ import SwiftyJSON
 struct AccountAPI {
   static let shared = AccountAPI()
 
-  func signin(_ parameters: Parameters?, completionHandler: @escaping (Result<[String: Any]>) -> Void) {
+  func signin(_ parameters: Parameters?, completionHandler: @escaping (Result<Any>) -> Void) {
     RequestAPI.shared.call("v1/signin", method: .post, parameters: parameters) { res in
       print(res.value!)
 
@@ -33,7 +33,7 @@ struct AccountAPI {
     }
   }
 
-  func signup(_ parameters: Parameters?, completionHandler: @escaping (Result<[String: Any]>) -> Void) {
+  func signup(_ parameters: Parameters?, completionHandler: @escaping (Result<Any>) -> Void) {
     RequestAPI.shared.call("v1/signup", method: .post, parameters: parameters, completion: completionHandler)
   }
 }
