@@ -16,32 +16,47 @@ struct Account: Codable {
   var accessToken: String
 }
 
+struct AccountAPI {
+  static let shared = AccountAPI()
+
+  func singin(_ parameters: Parameters) {
+    Alamofire.request("http://localhost:3000/api/v1/signin", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { res in
+      switch res.result {
+      case .success:
+        let json = JSON(res.result.value)
+        print(json)
+      case let .failure(err):
+        print(err.localizedDescription)
+      }
+    }
+  }
+}
+
 struct LogInView: View {
   @State var email: String = ""
   @State var password: String = ""
 
-  func req() {
-    let parameters: Parameters = [
-      "email": "test@test.com",
-      "password": "test",
+  var logInFormData: Parameters {
+    [
+      "email": email,
+      "password": password,
     ]
-    Alamofire.request("https://localhost:3000/api/v1/signin", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-      debugPrint(response)
-    }
   }
 
   var body: some View {
     VStack {
       Text("SwiftUI Skeleton App - Log In View")
       TextField("Email", text: $email)
-      TextField("Password", text: $password)
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+      SecureField("Password", text: $password)
+        .textFieldStyle(RoundedBorderTextFieldStyle())
       Button("Log In") {
-        print("Log In Succeed")
+        AccountAPI.shared.singin(self.logInFormData)
       }
     }
     .padding()
     .onAppear {
-      self.req()
+      print("On Appear")
     }
   }
 }
