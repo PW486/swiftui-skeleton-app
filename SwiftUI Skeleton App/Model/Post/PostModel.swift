@@ -6,8 +6,6 @@
 //  Copyright © 2019 PW486. All rights reserved.
 //
 
-import SwiftUI
-
 struct Post: Codable, Hashable {
   var id: Int
   var title: String

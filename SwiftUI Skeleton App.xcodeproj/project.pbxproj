@@ -73,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A0602D0232FBB4400405AF1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8A8C834B232F1681007F6410 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		8A304684232CECA8003D6A07 = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +132,6 @@
 				8A8C8325232D0DB8007F6410 /* HomeView.swift */,
 				8A8C8347232EF4C8007F6410 /* PostRow.swift */,
 				8A8C8349232EF4D4007F6410 /* PostDetail.swift */,
-				8A8C834B232F1681007F6410 /* ProfileView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				8A8C8320232D0AC4007F6410 /* Home */,
+				8A0602D0232FBB4400405AF1 /* Profile */,
 				8A8C8321232D0BCE007F6410 /* LogIn */,
 				8A8C8322232D0BDD007F6410 /* Register */,
 			);
@@ -463,6 +471,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.swiftui-skeleton-app";
 				PRODUCT_NAME = Skeleton;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -485,6 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.pw486.swiftui-skeleton-app";
 				PRODUCT_NAME = Skeleton;
 				PROVISIONING_PROFILE_SPECIFIER = "";

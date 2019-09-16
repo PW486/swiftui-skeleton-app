@@ -7,7 +7,7 @@
 //
 
 import Alamofire
-import SwiftUI
+import Foundation
 import SwiftyJSON
 
 struct PostAPI {
