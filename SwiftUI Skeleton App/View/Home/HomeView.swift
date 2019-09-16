@@ -10,57 +10,49 @@ import SwiftUI
 import SwiftyJSON
 
 struct HomeView: View {
-  @State private var showModal: Bool = false
   @EnvironmentObject private var globalState: GlobalState
+  @State private var showModal: Bool = false
 
-  func fetch() {
+  func getPostList() {
     PostAPI.findAll(nil) { res in
-      var postList = [Post]()
-      let decoder = JSONDecoder()
-      if let value = res.value {
-        let json = JSON(value)
-        for (_, subJson): (String, JSON) in json {
-          print(subJson)
-          do {
-            let post = try decoder.decode(Post.self, from: subJson.rawData())
-            postList.append(post)
-          } catch {
-            print(error)
-          }
+      if let json = res.value {
+        let decoder = JSONDecoder()
+        do {
+          let postList = try decoder.decode([Post].self, from: json.rawData())
+          self.globalState.postList = postList
+        } catch {
+          print(error.localizedDescription)
         }
-        self.globalState.postList = postList
       }
     }
+  }
+
+  var profileItem: some View {
+    Button(action: {
+      self.showModal.toggle()
+    }, label: {
+      Image(systemName: "person.crop.circle")
+        .imageScale(.large)
+    })
   }
 
   var body: some View {
     NavigationView {
       List {
         ForEach(globalState.postList, id: \.self) { post in
-          NavigationLink(
-            destination: PostDetail(post: post)
-          ) {
+          NavigationLink(destination: PostDetail(post: post)) {
             PostRow(post: post)
           }
         }
       }
-      .navigationBarItems(trailing:
-        Button(action: {
-          self.showModal = true
-        }, label: {
-          Image(systemName: "person.circle")
-      }))
       .navigationBarTitle(Text("Skeleton"), displayMode: .inline)
-      .onAppear {
-        if UserDefaults.standard.string(forKey: "access_token") == nil {
-          self.showModal = true
-        }
-
-        self.fetch()
-      }
+      .navigationBarItems(trailing: profileItem)
+    }
+    .onAppear {
+      self.globalState.accessToken == "" ? self.showModal.toggle() : self.getPostList()
     }
     .sheet(isPresented: $showModal, onDismiss: {
-      self.fetch()
+      self.getPostList()
     }, content: {
       if self.globalState.accessToken == "" {
         LogInView().environmentObject(self.globalState)
@@ -73,6 +65,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeView()
+    HomeView().environmentObject(GlobalState())
   }
 }

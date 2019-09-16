@@ -12,22 +12,38 @@ struct PostDetail: View {
   @EnvironmentObject private var globalState: GlobalState
   var post: Post
 
-  var postIndex: Int {
-    globalState.postList.firstIndex(where: { $0.id == post.id })!
-  }
-
   var body: some View {
-    VStack {
-      Text(post.title)
+    VStack(alignment: .leading) {
+      HStack {
+        Image(systemName: "doc.append")
+          .foregroundColor(.red)
+          .font(.title)
+          .padding(.trailing, 10)
+        Text(post.title)
+          .bold()
+        Spacer()
+        Text(DateToFormat(post.createdAt))
+          .font(.caption)
+      }
+      Divider()
       Text(post.text)
+      Spacer()
+      Divider()
+      HStack {
+        Spacer()
+        Text("SwiftUI Skeleton App")
+          .font(.caption)
+        Spacer()
+      }
     }
+    .navigationBarTitle(Text("Post Detail"))
+    .padding()
   }
 }
 
 struct PostDetail_Previews: PreviewProvider {
   static var previews: some View {
-    let globalState = GlobalState()
-    return PostDetail(post: globalState.postList[0])
-      .environmentObject(globalState)
+    PostDetail(post: Post(id: 1, title: "Title", text: "Text...", createdAt: "2020-04-06T07:00:00.000Z", updatedAt: "2020-04-06T07:00:00.000Z"))
+      .environmentObject(GlobalState())
   }
 }

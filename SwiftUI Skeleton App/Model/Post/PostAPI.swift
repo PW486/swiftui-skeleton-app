@@ -11,11 +11,11 @@ import SwiftUI
 import SwiftyJSON
 
 struct PostAPI {
-  static func findAll(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+  static func findAll(_ parameters: Parameters?, completion: @escaping (Result<JSON>) -> Void) {
     RequestAPI.call("v1/posts", method: .get, parameters: parameters, completion: completion)
   }
 
-  static func create(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+  static func create(_ parameters: Parameters?, completion: @escaping (Result<JSON>) -> Void) {
     RequestAPI.call("v1/posts", method: .post, parameters: parameters, completion: completion)
   }
 }

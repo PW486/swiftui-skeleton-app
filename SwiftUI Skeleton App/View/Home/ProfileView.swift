@@ -13,17 +13,35 @@ struct ProfileView: View {
 
   var body: some View {
     VStack {
-      Text("Token: \(globalState.accessToken)").padding()
-      Button("LogOut") {
+      HStack {
+        Image(systemName: "link.circle")
+        Text("Token")
+          .bold()
+        Spacer()
+      }
+      Text(globalState.accessToken)
+        .font(.caption)
+      Divider()
+      Button(action: {
         self.globalState.accessToken = ""
         UserDefaults.standard.removeObject(forKey: "access_token")
-      }
+      }, label: {
+        Image(systemName: "person.crop.circle.badge.xmark")
+          .foregroundColor(.red)
+          .font(.title)
+          .padding(.leading, -5)
+        Text("Logout")
+          .foregroundColor(.red)
+          .bold()
+      })
+        .padding()
     }
+    .padding(48)
   }
 }
 
 struct ProfileView_Previews: PreviewProvider {
   static var previews: some View {
-    ProfileView()
+    ProfileView().environmentObject(GlobalState())
   }
 }

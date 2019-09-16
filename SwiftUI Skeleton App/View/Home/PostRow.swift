@@ -13,18 +13,31 @@ struct PostRow: View {
 
   var body: some View {
     HStack {
-      VStack {
-        Text(post.title)
+      Image(systemName: "doc.append")
+        .foregroundColor(.red)
+        .font(.title)
+        .padding(.trailing, 10)
+      VStack(alignment: .leading) {
+        HStack {
+          Text(post.title)
+            .bold()
+            .lineLimit(1)
+          Spacer()
+          Text(DateToFormat(post.createdAt))
+            .font(.caption)
+        }
         Text(post.text)
+          .font(.caption)
+          .lineLimit(2)
       }
-      Text(post.createdAt)
     }
+    .frame(height: 70)
   }
 }
 
 struct PostRow_Previews: PreviewProvider {
   static var previews: some View {
-    let globalState = GlobalState()
-    return PostRow(post: globalState.postList[0])
+    PostRow(post: Post(id: 1, title: "Title", text: "Text...", createdAt: "2020-04-06T07:00:00.000Z", updatedAt: "2020-04-06T07:00:00.000Z"))
+      .previewLayout(.fixed(width: 300, height: 70))
   }
 }

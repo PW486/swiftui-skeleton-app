@@ -11,11 +11,11 @@ import SwiftUI
 import SwiftyJSON
 
 struct AccountAPI {
-  static func signin(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+  static func signin(_ parameters: Parameters?, completion: @escaping (Result<JSON>) -> Void) {
     RequestAPI.call("v1/signin", method: .post, parameters: parameters) { res in
       switch res {
       case .success:
-        if let json = res.value as? JSON {
+        if let json = res.value {
           UserDefaults.standard.set(json["access_token"].string, forKey: "access_token")
           completion(.success(json))
         }
@@ -25,11 +25,11 @@ struct AccountAPI {
     }
   }
 
-  static func signup(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+  static func signup(_ parameters: Parameters?, completion: @escaping (Result<JSON>) -> Void) {
     RequestAPI.call("v1/signup", method: .post, parameters: parameters) { res in
       switch res {
       case .success:
-        if let json = res.value as? JSON {
+        if let json = res.value {
           UserDefaults.standard.set(json["access_token"].string, forKey: "access_token")
           completion(.success(json))
         }

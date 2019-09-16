@@ -12,10 +12,17 @@ import SwiftyJSON
 
 struct RegisterView: View {
   @EnvironmentObject private var globalState: GlobalState
-  @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-  @State var email: String = ""
-  @State var name: String = ""
-  @State var password: String = ""
+  @Environment(\.presentationMode) private var presentation: Binding<PresentationMode>
+
+  @State private var email: String = ""
+  @State private var name: String = ""
+  @State private var password: String = ""
+
+  func stateReset() {
+    email = ""
+    name = ""
+    password = ""
+  }
 
   var registerFormData: Parameters {
     [
@@ -27,41 +34,66 @@ struct RegisterView: View {
 
   var body: some View {
     VStack {
-      Text("SwiftUI Skeleton App - Register View")
+      Image(systemName: "person.crop.circle.badge.plus")
+        .font(.largeTitle)
+      Text("REGISTER")
+        .bold()
+        .font(.largeTitle)
+      Text("SwiftUI Skeleton App")
+        .font(.subheadline)
+
       TextField("Email", text: $email)
         .textFieldStyle(RoundedBorderTextFieldStyle())
       TextField("Name", text: $name)
         .textFieldStyle(RoundedBorderTextFieldStyle())
       SecureField("Password", text: $password)
         .textFieldStyle(RoundedBorderTextFieldStyle())
+
       HStack {
-        Button("Cancel") {
+        Button(action: {
           self.presentation.wrappedValue.dismiss()
-        }
-        Button("Sign Up") {
+        }, label: {
+          HStack {
+            Image(systemName: "xmark.circle")
+            Text("Cancel")
+          }
+          .foregroundColor(Color.white)
+          .frame(width: 95, height: 32)
+          .background(Color.blue)
+          .cornerRadius(5)
+        })
+
+        Button(action: {
           AccountAPI.signup(self.registerFormData) { res in
             switch res {
             case .success:
-              if let json = res.value as? JSON, let accessToken = json["access_token"].string {
+              if let json = res.value, let accessToken = json["access_token"].string {
                 self.globalState.accessToken = accessToken
               }
+              self.stateReset()
               self.presentation.wrappedValue.dismiss()
             case let .failure(error):
               print(error)
             }
           }
-        }
+        }, label: {
+          HStack {
+            Image(systemName: "checkmark.circle")
+            Text("Sign Up")
+          }
+          .foregroundColor(Color.white)
+          .frame(width: 110, height: 32)
+          .background(Color.blue)
+          .cornerRadius(5)
+        })
       }
     }
-    .padding()
-    .onAppear {
-      print("On Appear")
-    }
+    .padding(48)
   }
 }
 
 struct RegisterView_Previews: PreviewProvider {
   static var previews: some View {
-    RegisterView()
+    RegisterView().environmentObject(GlobalState())
   }
 }

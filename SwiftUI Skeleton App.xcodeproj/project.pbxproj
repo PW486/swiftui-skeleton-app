@@ -30,6 +30,7 @@
 		8A8C8348232EF4C8007F6410 /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8347232EF4C8007F6410 /* PostRow.swift */; };
 		8A8C834A232EF4D4007F6410 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C8349232EF4D4007F6410 /* PostDetail.swift */; };
 		8A8C834C232F1681007F6410 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C834B232F1681007F6410 /* ProfileView.swift */; };
+		8A8C834E232F948F007F6410 /* DateToFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C834D232F948F007F6410 /* DateToFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		8A8C8347232EF4C8007F6410 /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 		8A8C8349232EF4D4007F6410 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		8A8C834B232F1681007F6410 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8A8C834D232F948F007F6410 /* DateToFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			children = (
 				8A8C833F232E0365007F6410 /* RequestAPI.swift */,
 				8A8C8345232EF398007F6410 /* GlobalState.swift */,
+				8A8C834D232F948F007F6410 /* DateToFormat.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				8A8C8342232E10AE007F6410 /* PostAPI.swift in Sources */,
 				8A8C8346232EF398007F6410 /* GlobalState.swift in Sources */,
 				8A8C8326232D0DB8007F6410 /* HomeView.swift in Sources */,
+				8A8C834E232F948F007F6410 /* DateToFormat.swift in Sources */,
 				8A8C833E232DFC7B007F6410 /* AccountAPI.swift in Sources */,
 				8A8C8340232E0365007F6410 /* RequestAPI.swift in Sources */,
 				8A8C834A232EF4D4007F6410 /* PostDetail.swift in Sources */,
