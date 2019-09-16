@@ -10,16 +10,32 @@ import SwiftUI
 import SwiftyJSON
 
 struct HomeView: View {
-  @State private var showModal = false
+  @State private var showModal: Bool = false
   @EnvironmentObject private var globalState: GlobalState
+
+  func fetch() {
+    PostAPI.shared.findAll(nil) { res in
+      var postList = [Post]()
+      let decoder = JSONDecoder()
+      if let value = res.value {
+        let json = JSON(value)
+        for (_, subJson): (String, JSON) in json {
+          print(subJson)
+          do {
+            let post = try decoder.decode(Post.self, from: subJson.rawData())
+            postList.append(post)
+          } catch {
+            print(error)
+          }
+        }
+        self.globalState.postList = postList
+      }
+    }
+  }
 
   var body: some View {
     NavigationView {
       List {
-        Text("Hello World")
-        Text("Hello World")
-        Text("Hello World")
-
         ForEach(globalState.postList, id: \.self) { post in
           NavigationLink(
             destination: PostDetail(post: post)
@@ -39,27 +55,18 @@ struct HomeView: View {
         if UserDefaults.standard.string(forKey: "access_token") == nil {
           self.showModal = true
         }
-        PostAPI.shared.findAll(nil) { res in
 
-          var postList = [Post]()
-          let decoder = JSONDecoder()
-          if let value = res.value {
-            let json = JSON(value)
-            for (_, subJson): (String, JSON) in json {
-              print(subJson)
-              do {
-                let post = try decoder.decode(Post.self, from: subJson.rawData())
-                postList.append(post)
-              } catch {
-                print(error)
-              }
-            }
-            self.globalState.postList = postList
-          }
-        }
+        self.fetch()
       }
-    }.sheet(isPresented: $showModal, content: {
-      LogInView()
+    }
+    .sheet(isPresented: $showModal, onDismiss: {
+      self.fetch()
+    }, content: {
+      if self.globalState.accessToken == "" {
+        LogInView().environmentObject(self.globalState)
+      } else {
+        ProfileView().environmentObject(self.globalState)
+      }
     })
   }
 }

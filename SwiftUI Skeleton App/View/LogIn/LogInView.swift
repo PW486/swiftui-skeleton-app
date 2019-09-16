@@ -11,6 +11,7 @@ import SwiftUI
 import SwiftyJSON
 
 struct LogInView: View {
+  @EnvironmentObject private var globalState: GlobalState
   @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
   @State private var showModal = false
   @State var email: String = ""
@@ -37,7 +38,14 @@ struct LogInView: View {
         }
         Button("Log In") {
           AccountAPI.shared.signin(self.logInFormData) { res in
-            print(res)
+            switch res {
+            case .success:
+              if let json = res.value as? JSON, let accessToken = json["access_token"].string {
+                self.globalState.accessToken = accessToken
+              }
+            case let .failure(error):
+              print(error)
+            }
           }
         }
         Button("Register") {
@@ -49,7 +57,7 @@ struct LogInView: View {
     .onAppear {
       print("On Appear")
     }.sheet(isPresented: $showModal, content: {
-      RegisterView()
+      RegisterView().environmentObject(self.globalState)
     })
   }
 }

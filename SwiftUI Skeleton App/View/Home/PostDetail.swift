@@ -18,7 +18,8 @@ struct PostDetail: View {
 
   var body: some View {
     VStack {
-      Text("Hello World!")
+      Text(post.title)
+      Text(post.text)
     }
   }
 }

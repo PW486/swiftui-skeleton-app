@@ -11,6 +11,7 @@ import SwiftUI
 import SwiftyJSON
 
 struct RegisterView: View {
+  @EnvironmentObject private var globalState: GlobalState
   @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
   @State var email: String = ""
   @State var name: String = ""
@@ -39,7 +40,15 @@ struct RegisterView: View {
         }
         Button("Sign Up") {
           AccountAPI.shared.signup(self.registerFormData) { res in
-            print(res)
+            switch res {
+            case .success:
+              if let json = res.value as? JSON, let accessToken = json["access_token"].string {
+                self.globalState.accessToken = accessToken
+              }
+              self.presentation.wrappedValue.dismiss()
+            case let .failure(error):
+              print(error)
+            }
           }
         }
       }

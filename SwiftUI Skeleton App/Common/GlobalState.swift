@@ -9,8 +9,6 @@
 import Foundation
 
 final class GlobalState: ObservableObject {
-  @Published var email: String = ""
-  @Published var name: String = ""
   @Published var accessToken: String = UserDefaults.standard.string(forKey: "access_token") ?? ""
   @Published var postList: [Post] = []
 }

@@ -1,5 +1,5 @@
 //
-//  BoardAPI.swift
+//  PostAPI.swift
 //  SwiftUI Skeleton App
 //
 //  Created by PW486 on 2019/09/15.
@@ -13,15 +13,15 @@ import SwiftyJSON
 struct PostAPI {
   static let shared = PostAPI()
 
-  func findAll(_ parameters: Parameters?, completionHandler: @escaping (Result<Any>) -> Void) {
-    RequestAPI.shared.call("v1/posts", method: .get, parameters: parameters, completion: completionHandler)
+  func findAll(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+    RequestAPI.shared.call("v1/posts", method: .get, parameters: parameters, completion: completion)
   }
 
-  func findById(_ parameters: Parameters?, completionHandler: @escaping (Result<Any>) -> Void) {
-    RequestAPI.shared.call("v1/posts/:id", method: .get, parameters: parameters, completion: completionHandler)
+  func findById(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+    RequestAPI.shared.call("v1/posts/:id", method: .get, parameters: parameters, completion: completion)
   }
 
-  func create(_ parameters: Parameters?, completionHandler: @escaping (Result<Any>) -> Void) {
-    RequestAPI.shared.call("v1/posts", method: .post, parameters: parameters, completion: completionHandler)
+  func create(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+    RequestAPI.shared.call("v1/posts", method: .post, parameters: parameters, completion: completion)
   }
 }
