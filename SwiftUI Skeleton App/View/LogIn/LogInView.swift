@@ -37,7 +37,7 @@ struct LogInView: View {
           self.presentation.wrappedValue.dismiss()
         }
         Button("Log In") {
-          AccountAPI.shared.signin(self.logInFormData) { res in
+          AccountAPI.signin(self.logInFormData) { res in
             switch res {
             case .success:
               if let json = res.value as? JSON, let accessToken = json["access_token"].string {

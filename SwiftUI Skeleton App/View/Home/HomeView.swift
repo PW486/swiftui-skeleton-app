@@ -14,7 +14,7 @@ struct HomeView: View {
   @EnvironmentObject private var globalState: GlobalState
 
   func fetch() {
-    PostAPI.shared.findAll(nil) { res in
+    PostAPI.findAll(nil) { res in
       var postList = [Post]()
       let decoder = JSONDecoder()
       if let value = res.value {

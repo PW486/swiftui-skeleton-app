@@ -11,10 +11,8 @@ import SwiftUI
 import SwiftyJSON
 
 struct AccountAPI {
-  static let shared = AccountAPI()
-
-  func signin(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
-    RequestAPI.shared.call("v1/signin", method: .post, parameters: parameters) { res in
+  static func signin(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+    RequestAPI.call("v1/signin", method: .post, parameters: parameters) { res in
       switch res {
       case .success:
         if let json = res.value as? JSON {
@@ -28,8 +26,8 @@ struct AccountAPI {
     }
   }
 
-  func signup(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
-    RequestAPI.shared.call("v1/signup", method: .post, parameters: parameters) { res in
+  static func signup(_ parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+    RequestAPI.call("v1/signup", method: .post, parameters: parameters) { res in
       switch res {
       case .success:
         if let json = res.value as? JSON {

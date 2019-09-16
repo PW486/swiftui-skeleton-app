@@ -39,7 +39,7 @@ struct RegisterView: View {
           self.presentation.wrappedValue.dismiss()
         }
         Button("Sign Up") {
-          AccountAPI.shared.signup(self.registerFormData) { res in
+          AccountAPI.signup(self.registerFormData) { res in
             switch res {
             case .success:
               if let json = res.value as? JSON, let accessToken = json["access_token"].string {

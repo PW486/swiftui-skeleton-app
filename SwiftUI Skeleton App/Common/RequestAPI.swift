@@ -11,9 +11,7 @@ import SwiftUI
 import SwiftyJSON
 
 struct RequestAPI {
-  static let shared = RequestAPI()
-
-  func call(_ path: String, method: HTTPMethod, parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
+  static func call(_ path: String, method: HTTPMethod, parameters: Parameters?, completion: @escaping (Result<Any>) -> Void) {
     let baseURL = URL(string: "http://localhost:3000/api")
     let url = baseURL!.appendingPathComponent(path)
     let accessToken = UserDefaults.standard.string(forKey: "access_token") ?? ""
