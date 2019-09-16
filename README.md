@@ -13,9 +13,24 @@
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/PW486/swiftui-skeleton-app?style=flat-square&color=brown">
 </p>
 
-> SwiftUI Skeleton App
+> It would be helpful if you wanted to quickly start the iOS Application on the REST API server with SwiftUI. This project use Alamofire, SwiftyJSON libraries as well as basic SwiftUI structures.
 
-## WIP
+Here is an example server. [https://github.com/PW486/express-ts-starter](https://github.com/PW486/express-ts-starter)
+
+![Xcode Screenshot](https://i.imgur.com/5xZASCU.png)
+
+## Demo
+
+[![SwiftUI Skeleton App](https://img.youtube.com/vi/zL5UUI-HuB8/0.jpg)](https://www.youtube.com/watch?v=zL5UUI-HuB8)
+<br>
+[YouTube](https://www.youtube.com/watch?v=-TT-cMpDv1c)
+
+## Reference
+
+- [Fucking SwiftUI - SwiftUI Cheat Sheet](https://fuckingswiftui.com/)
+- [SwiftUI Hub - SwiftUI Tutorials & Resources](https://swiftuihub.com/)
+- [Aboud SwiftUI - SwiftUI Awesome List](https://github.com/Juanpe/About-SwiftUI)
+- [MovieSwiftUI](https://github.com/Dimillian/MovieSwiftUI)
 
 ## License
 
