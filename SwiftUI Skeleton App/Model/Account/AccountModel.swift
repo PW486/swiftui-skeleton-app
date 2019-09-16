@@ -6,11 +6,12 @@
 //  Copyright © 2019 PW486. All rights reserved.
 //
 
-import Combine
 import SwiftUI
 
 struct Account: Codable {
+  var id: Int
   var email: String
   var name: String
-  var accessToken: String
+  var createdAt: String
+  var updatedAt: String
 }

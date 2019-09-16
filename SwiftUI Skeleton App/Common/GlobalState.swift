@@ -6,7 +6,7 @@
 //  Copyright © 2019 PW486. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 final class GlobalState: ObservableObject {
   @Published var accessToken: String = UserDefaults.standard.string(forKey: "access_token") ?? ""

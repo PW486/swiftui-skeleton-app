@@ -16,7 +16,6 @@ struct AccountAPI {
       switch res {
       case .success:
         if let json = res.value as? JSON {
-          print(json)
           UserDefaults.standard.set(json["access_token"].string, forKey: "access_token")
           completion(.success(json))
         }
@@ -31,7 +30,6 @@ struct AccountAPI {
       switch res {
       case .success:
         if let json = res.value as? JSON {
-          print(json)
           UserDefaults.standard.set(json["access_token"].string, forKey: "access_token")
           completion(.success(json))
         }
