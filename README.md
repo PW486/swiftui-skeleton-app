@@ -19,17 +19,29 @@ Here is an example server. [https://github.com/PW486/express-ts-starter](https:/
 
 ![Xcode Screenshot](https://i.imgur.com/5xZASCU.png)
 
+## Environment
+
+- macOS Catalina 10.15 beta 8 (19A558d)
+- Xcode 11 GM Seed (11A419c)
+- [Alamofire](https://github.com/Alamofire/Alamofire)
+- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+- [SF Symbols (1A84)](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview)
+- [REST API + JWT Authentication Server](https://github.com/PW486/express-ts-starter)
+- Swift Package Manager
+- SwiftLint
+- SwiftFormat
+
 ## Demo
 
 [![SwiftUI Skeleton App](https://img.youtube.com/vi/zL5UUI-HuB8/0.jpg)](https://www.youtube.com/watch?v=zL5UUI-HuB8)
 <br>
-[YouTube](https://www.youtube.com/watch?v=-TT-cMpDv1c)
+[YouTube](https://www.youtube.com/watch?v=zL5UUI-HuB8)
 
 ## Reference
 
 - [Fucking SwiftUI - SwiftUI Cheat Sheet](https://fuckingswiftui.com/)
 - [SwiftUI Hub - SwiftUI Tutorials & Resources](https://swiftuihub.com/)
-- [Aboud SwiftUI - SwiftUI Awesome List](https://github.com/Juanpe/About-SwiftUI)
+- [About SwiftUI - SwiftUI Awesome List](https://github.com/Juanpe/About-SwiftUI)
 - [MovieSwiftUI](https://github.com/Dimillian/MovieSwiftUI)
 
 ## License
