@@ -33,7 +33,7 @@ Here is an example server. [https://github.com/PW486/express-ts-starter](https:/
 
 ## Demo
 
-[![SwiftUI Skeleton App](https://img.youtube.com/vi/zL5UUI-HuB8/0.jpg)](https://www.youtube.com/watch?v=zL5UUI-HuB8)
+[![SwiftUI Skeleton App](https://user-images.githubusercontent.com/14247340/69509156-50d8c900-0f7b-11ea-993e-a05ce2eddfd6.png)](https://www.youtube.com/watch?v=zL5UUI-HuB8)
 <br>
 [YouTube](https://www.youtube.com/watch?v=zL5UUI-HuB8)
 
